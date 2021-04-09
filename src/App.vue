@@ -1,5 +1,5 @@
 <template>
-  <div class="antialiased flex flex-col">
+  <div class="antialiased flex flex-col overflow-hidden">
     <div class="bg-primary h-3 w-full"></div>
     <div class="px-5 md:px-12">
       <div class="flex flex-col md:flex-row justify-center md:justify-between items-center pt-10">
