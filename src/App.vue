@@ -3,13 +3,16 @@
     <div class="bg-primary h-3 w-full"></div>
     <div class="px-5 md:px-12">
       <div class="flex flex-col md:flex-row justify-center md:justify-between items-center pt-10">
-        <h1 class="text-4xl font-semibold mb-5 md:mb-0 md:text-4xl font-orbitron">
+        <div class="flex items-center mb-5 md:mb-0">
+          <img src="./assets/img/logo.png" alt="" srcset="" class="w-12 h-12 mr-3">
+          <h1 class="text-4xl font-semibold md:text-4xl font-orbitron">
           <span class="font-bold text-primary">keigo</span>fujita
         </h1>
-        <div class="flex font-sans">
+        </div>
+        <div class="flex font-sans justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 mr-2"
+            class="h-6 w-6 mr-2 hidden md:block"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -39,7 +42,7 @@
         <img src="./assets/svg/test.svg" alt srcset class="mx-auto w-64" />
       </div>
     </div>
-    <div class="mx-auto pt-12 px-8 md:px-2 w-full max-w-screen-md text-justify">
+    <div class="mx-auto pt-12 px-8 md:px-2 w-full max-w-screen-md text-justify font-open-sans">
       <p class="text-xl md:text-2xl">Hey, I'm Keigo. I create custom websites to help businesses do better online. I specialize in the Laravel PHP framework on the backend, Vue.js on the frontend and Tailwind CSS for styling. I also teach online where I share my knowledge and experience about Web Development.</p>
     </div>
     <div class="mx-auto pt-12 px-8 w-full max-w-screen-md border-b border-gray-200 md:pt-20">
