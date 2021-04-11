@@ -171,7 +171,7 @@
     </div>
     
     <!-- GET TO KNOW ME -->
-    <div class="mx-auto py-16 px-4 w-full max-w-screen-md relative">
+    <div class="mx-auto py-16 px-4 w-full max-w-screen-md relative font-open-sans">
       <p class="font-semibold text-2xl text-center text-gray-700 mb-8 md:text-2xl md:text-left">Get to know me</p>
       <div class="flex flex-col md:flex-row items-center">
         <img src="./assets/img/profile.jpg" class="rounded-full mb-8 w-1/4 md:w-1/6 md:mr-5 md:mb-0" />
@@ -192,7 +192,7 @@
           d="M0 23c135.4 19 289.6 28.5 462.5 28.5C721.9 51.5 936.7 1 1212.2 1c183.6-.1 344.5 7.3 482.8 22v34H0V23z"
         />
       </svg>
-      <div class="bg-footer">
+      <div class="bg-footer ">
         <div class="mx-auto py-16 px-4 w-full max-w-screen-md">
           <p class="font-semibold text-gray-700 mb-8 text-2xl text-center md:text-3xl">Let's talk</p>
           <p class="text-xl font-light text-center">
