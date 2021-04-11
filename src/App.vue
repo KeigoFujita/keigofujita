@@ -42,12 +42,12 @@
         <img src="./assets/svg/test.svg" alt srcset class="mx-auto w-64" />
       </div>
     </div>
-    <div class="mx-auto pt-12 px-8 md:px-2 w-full max-w-screen-md text-justify font-open-sans">
+    <div class="mx-auto pt-12 px-8 md:px-2 w-full max-w-screen-md font-open-sans">
       <p class="text-xl md:text-2xl">Hey, I'm Keigo. I create custom websites to help businesses do better online. I specialize in the Laravel PHP framework on the backend, Vue.js on the frontend and Tailwind CSS for styling. I also teach online where I share my knowledge and experience about Web Development.</p>
     </div>
     <div class="mx-auto pt-12 px-8 w-full max-w-screen-md border-b border-gray-200 md:pt-20">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <img src="./assets/svg/website.svg" alt class="w-full md:w-1/3 md:mb-0 mb-12 mx-auto" />
+        <img src="./assets/svg/website.svg" alt class="w-5/6 sm:w-2/3 md:w-1/3 md:mb-0 mb-12 mx-auto" />
         <img src="./assets/svg/phone.svg" alt class="hidden md:w-1/3 md:block mx-auto" />
       </div>
     </div>
@@ -72,8 +72,8 @@
         <div>
           <p class="text-gray-700 font-semibold">Sunpack ERP</p>
           <p
-            class="text-gray-400 text-sm md:text-base"
-          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eaque tempora exercitationem a, eum iste dolore reprehenderit neque quas dolor?</p>
+            class="text-gray-500 text-sm md:text-base"
+          >An Enterprise Resource Planning software for a carton manufacturing company. Sunpack ERP integrates all software and business processes on a single system. Built with Powerbuilder and SQL Server.</p>
         </div>
       </div>
       <div class="flex items-stretch mb-4 md:text-xl">
@@ -94,8 +94,8 @@
         <div>
           <p class="text-gray-700 font-semibold">Gardner Clearance System</p>
           <p
-            class="text-gray-400 text-sm md:text-base"
-          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eaque tempora exercitationem a, eum iste dolore reprehenderit neque quas dolor?</p>
+            class="text-gray-500 text-sm md:text-base"
+          >An efficient and computerized clearance system (web-based application) for the school. Gardner College Clearance System is capable of handling comprehensive information of the student in a simultaneous and speedy way.</p>
         </div>
       </div>
       <div class="flex items-stretch mb-4 md:text-xl">
@@ -116,8 +116,8 @@
         <div>
           <p class="text-gray-700 font-semibold">iVisit Lobby Management System</p>
           <p
-            class="text-gray-400 text-sm md:text-base"
-          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eaque tempora exercitationem a, eum iste dolore reprehenderit neque quas dolor?</p>
+            class="text-gray-500 text-sm md:text-base"
+          >A desktop application for managing visitor entry and appointment. iVisit digitizes the traditional logbook process for obtaining visitor information. Built with Visual Basic and MySQL.</p>
         </div>
       </div>
       <div class="flex items-stretch mb-4 md:text-xl">
@@ -136,10 +136,10 @@
           </svg>
         </div>
         <div>
-          <p class="text-gray-700 font-semibold">Content Management System</p>
+          <p class="text-gray-700 font-semibold">Larabooks</p>
           <p
-            class="text-gray-400 text-sm md:text-base"
-          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eaque tempora exercitationem a, eum iste dolore reprehenderit neque quas dolor?</p>
+            class="text-gray-500 text-sm md:text-base"
+          >A simple book management system built with Laravel. Larabooks has a built in REST API integration and authentication.</p>
         </div>
       </div>
       <div class="flex items-stretch md:text-xl">
@@ -160,8 +160,8 @@
         <div>
           <p class="text-gray-700 font-semibold">Perfume Landing Page</p>
           <p
-            class="text-gray-400 text-sm md:text-base"
-          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit eaque tempora exercitationem a, eum iste dolore reprehenderit neque quas dolor?</p>
+            class="text-gray-500 text-sm md:text-base"
+          >A sample perfume landing page for product display and marketing purpose.</p>
         </div>
       </div>
       <div class="absolute mx-auto h-48 w-48 bg-repeat top-8 -right-56 overflow-hidden">
@@ -172,12 +172,14 @@
     
     <!-- GET TO KNOW ME -->
     <div class="mx-auto py-16 px-4 w-full max-w-screen-md relative">
-      <p class="font-semibold text-gray-700 mb-8 md:text-2xl">Get to know me:</p>
+      <p class="font-semibold text-2xl text-center text-gray-700 mb-8 md:text-2xl md:text-left">Get to know me</p>
       <div class="flex flex-col md:flex-row items-center">
         <img src="./assets/img/profile.jpg" class="rounded-full mb-8 w-1/4 md:w-1/6 md:mr-5 md:mb-0" />
         <p
-          class="text-gray-600 text-justify text-xl md:text-xl"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit exercitationem veniam odit eum facilis modi amet illum quas tempora id!</p>
+          class="text-gray-600 text-xl md:text-xl"
+        >I started web development since 2019 and I've been part of different software development projects both desktop and web application. 
+        My eye for detail, creativity, and perfectionist nature have left me with many highly satisfied clients. 
+       </p>
       </div>
       <div class="absolute mx-auto h-48 w-48 bg-repeat -bottom-2 -left-56 overflow-hidden transform rotate-180">
         <div class="absolute left-0 top-0 w-72 h-72 bg-white transform translate-y-10 -translate-x-44 -rotate-45"></div>
@@ -192,13 +194,13 @@
       </svg>
       <div class="bg-footer">
         <div class="mx-auto py-16 px-4 w-full max-w-screen-md">
-          <p class="font-semibold text-gray-700 mb-8 text-2xl text-center">Contact me</p>
+          <p class="font-semibold text-gray-700 mb-8 text-2xl text-center md:text-3xl">Let's talk</p>
           <p class="text-xl font-light text-center">
-            If you’re looking to get in contact with me for business inquiries or if you have a question, feel free to
-            <a
-              href="mailto:keigofujita19@gmail.com"
-              class="text-primary"
-            >email</a> me. I’ll try to respond as soon as I can.
+           Wanna get in touch or talk about a project?
+           <br>
+            Feel free to contact me via email at <a href="mailto:keigofujita19@gmail.com" class="text-primary font-semibold">keigofujita19@gmail.com</a>
+            or drop a line in the form at the 
+            contact page
           </p>
         </div>
       </div>
