@@ -1,27 +1,5 @@
 <template>
   <div :class="{ 'dark' : this.theme == 'dark'}" class="transition-all relative" id="parent">
-    <div class="absolute right-4 top-8 md:hidden flex items-center justify-center p-3 rounded dark:text-white">
-      <button class="h-6 w-6 focus:outline-none" @click="toggleDark">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class=""
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              v-show="theme == 'light'"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-              />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="currentColor" v-show="theme == 'dark'">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-        </button>
-    </div>
     <div class="flex flex-col overflow-hidden bg-white dark:bg-d-primary content-wrapper">
     <div class="bg-primary h-3 w-full dark:bg-d-secondary"></div>
     <div class="px-5 md:px-12">
@@ -33,7 +11,7 @@
         </h1>
         </div>
         <div class="flex font-sans justify-center dark:text-white">
-          <button class="h-6 w-6 mr-2 hidden md:block focus:outline-none" @click="toggleDark">
+          <button class="h-6 w-6 mr-2 focus:outline-none" @click="toggleDark">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class=""
