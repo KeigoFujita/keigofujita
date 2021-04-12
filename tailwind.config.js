@@ -3,7 +3,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   presets: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     screens: {
       sm: '640px',
@@ -13,6 +13,12 @@ module.exports = {
       '2xl': '1536px',
     },
     colors: {
+
+      'd-primary':'#102C44',
+      'd-secondary':'#1C75BC',
+      'd-tertiary':'#0D2438',
+      'd-text-secondary':'#8891A4',
+      'd-footer':'#163654',
       primary:'#41729F',
       transparent: 'transparent',
       current: 'currentColor',
@@ -861,7 +867,7 @@ module.exports = {
     container: ['responsive'],
     contrast: ['responsive'],
     cursor: ['responsive'],
-    display: ['responsive'],
+    display: ['responsive','dark'],
     divideColor: ['responsive', 'dark'],
     divideOpacity: ['responsive', 'dark'],
     divideStyle: ['responsive'],
@@ -958,7 +964,7 @@ module.exports = {
     translate: ['responsive', 'hover', 'focus'],
     userSelect: ['responsive'],
     verticalAlign: ['responsive'],
-    visibility: ['responsive'],
+    visibility: ['responsive','dark'],
     whitespace: ['responsive'],
     width: ['responsive'],
     wordBreak: ['responsive'],
