@@ -4,6 +4,39 @@
 @tailwind components;
 @tailwind utilities;
 
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
+
 .content-wrapper{
     transition: background-color 0.7s;
+}
+
+@screen md{
+    
+    .img-holder .img-under {
+        transition: all 0.3s;
+    }
+    
+    .img-holder .project-image{
+        transition: all 0.3s;
+    }
+    
+    .img-holder:hover .img-under{
+        top:  -2rem;
+        left: -2rem;
+    }
+    
+    .img-holder:hover .project-image{
+        top: 1rem;
+        left: 1rem;
+    }
 }

@@ -13,7 +13,8 @@ module.exports = {
       '2xl': '1536px',
     },
     colors: {
-
+      'l-secondary':'#F4F6F8',
+      'l-project-overlay':'rgba(65, 114, 159, 0.24)',
       'd-primary':'#102C44',
       'd-secondary':'#1C75BC',
       'd-tertiary':'#0D2438',
@@ -857,8 +858,8 @@ module.exports = {
     borderColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     borderOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     borderRadius: ['responsive'],
-    borderStyle: ['responsive'],
-    borderWidth: ['responsive'],
+    borderStyle: ['responsive','focus'],
+    borderWidth: ['responsive','focus'],
     boxDecorationBreak: ['responsive'],
     boxShadow: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
     boxSizing: ['responsive'],
@@ -970,5 +971,9 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: 'class',
+    }),
+  ]
 }
