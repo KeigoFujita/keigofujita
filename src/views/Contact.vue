@@ -8,7 +8,7 @@
         <div class="flex flex-col md:flex-row justify-between md:space-x-12">
           <img src="@/assets/svg/contact.svg" alt srcset class="mt-12 mx-auto w-5/6 md:w-1/2 h-1/2 mb-16 md:mb-0" />
           <div class="w-full md:w-1/2">
-            <form name="contact" method="POST" data-netlify="true">
+            <form method="POST" data-netlify="true">
               <div class="mb-4">  
                 <p for class="text-primary dark:text-white mb-2">Name*</p>
                 <input
