@@ -16,6 +16,18 @@
   opacity: 0
 }
 
+.fadeform-enter-active,
+.fadeform-leave-active {
+  transition-duration: 0.5s;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}
+
+.fadeform-enter,
+.fadeform-leave-active {
+  opacity: 0
+}
+
 .content-wrapper{
     transition: background-color 0.7s;
 }
