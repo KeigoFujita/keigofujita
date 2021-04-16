@@ -19,9 +19,9 @@
           <div class="w-full md:w-1/2">
             <form
               name="contact"
-              method="POST"
+              method="post"
               data-netlify="true"
-              @submit.prevent="processForm"
+              data-netlify-honeypot="bot-field"
             >
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Name*</p>
@@ -125,6 +125,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data: function(){    
     return {
@@ -137,13 +138,32 @@ export default {
     }
   },
   methods: {
-    processForm: function(){
-      fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(new FormData(this.form)).toString()
-          }).then(() => console.log('Form successfully submitted')).catch((error) =>
-            alert(error))
+    encode(data) {  
+            const formData = new FormData();
+            
+            for (const key of Object.keys(data)) {
+                formData.append(key, data[key]);
+            }
+            
+            return formData;
+        },
+
+    handleFormSubmit(e) {
+        const axiosConfig = {
+            header: { "Content-Type": "application/x-www-form-urlencoded" }
+        };
+
+        axios.post(
+            location.href, 
+            this.encode({
+                'form-name': e.target.getAttribute("name"),
+                ...this.form,
+            }),
+            axiosConfig
+        )
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
+        .then(console.log('Success'))
     }
   }
 }
