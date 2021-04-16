@@ -26,7 +26,6 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Name*</p>
                 <input
-                  v-model="form.name"
                   type="text"
                   name="name"
                   class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-12 bg-gray-100 rounded border-2 border-primary focus:outline-none"
@@ -36,7 +35,6 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Email*</p>
                 <input
-                  v-model="form.email"
                   type="email"
                   name="email"
                   class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-12 bg-gray-100 rounded border-2 border-primary focus:outline-none"
@@ -46,7 +44,6 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Subject*</p>
                 <input
-                  v-model="form.subject"
                   type="text"
                   name="subject"
                   class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-12 bg-gray-100 rounded border-2 border-primary focus:outline-none"
@@ -56,7 +53,6 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Message*</p>
                 <textarea
-                  v-model="form.message"
                   name="message"
                   id=""
                   cols="30"
