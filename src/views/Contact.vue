@@ -19,9 +19,9 @@
           <div class="w-full md:w-1/2">
             <form
               name="contact"
-              method="POST"
+              method="post"
               data-netlify="true"
-              @submit.prevent="processForm"
+              data-netlify-honeypot="bot-field"
             >
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Name*</p>
@@ -126,25 +126,25 @@
 
 <script>
 export default {
-  data: function(){    
-    return {
-      form : {
-        name : '',
-        email: '',
-        subject: '',
-        message: ''
-     }
-    }
-  },
-  methods: {
-    processForm: function(){
-      fetch('/', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(new FormData(this.form)).toString()
-          }).then(() => console.log('Form successfully submitted')).catch((error) =>
-            alert(error))
-    }
-  }
+  // data: function(){    
+  //   return {
+  //     form : {
+  //       name : '',
+  //       email: '',
+  //       subject: '',
+  //       message: ''
+  //    }
+  //   }
+  // },
+  // methods: {
+  //   processForm: function(){
+  //     fetch('/', {
+  //           method: 'POST',
+  //           headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //           body: new URLSearchParams(new FormData(this.form)).toString()
+  //         }).then(() => console.log('Form successfully submitted')).catch((error) =>
+  //           alert(error))
+  //   }
+  // }
 }
 </script>

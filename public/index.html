@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="logo.png"/>
-    <title>Keigo Fujita</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="logo.png" />
+  <title>Keigo Fujita</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+    <div class="mb-4">
+      <input v-model="form.name" type="text" name="name"/>
+    </div>
+    <div class="mb-4">
+      <input v-model="form.email" type="email" name="email"/>
+    </div>
+    <div class="mb-4">
+      <input v-model="form.subject" type="text" name="subject"/>
+    </div>
+    <div class="mb-4">
+      <textarea v-model="form.message" name="message" id="" cols="30" rows="30"></textarea>
+    </div>
+  </form>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
