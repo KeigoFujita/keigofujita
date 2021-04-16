@@ -22,6 +22,8 @@
               method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              enctype="application/x-www-form-urlencoded"
+              @submit.prevent="handleFormSubmit"
             >
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Name*</p>
