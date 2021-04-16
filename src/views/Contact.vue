@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div class="py-24">
+    <div class="pt-24 pb-24 md:pb-96">
       <h1
         class="text-2xl md:text-4xl text-center font-semibold font-open-sans text-primary dark:text-white"
+        v-show="success == false"
       >
         GET IN TOUCH NOW!
       </h1>
@@ -17,6 +18,9 @@
             class="mt-12 mx-auto w-5/6 md:w-1/2 h-1/2 mb-16 md:mb-0"
           />
           <div class="w-full md:w-1/2">
+           <transition
+              name="fadeform"
+            >
             <form
               name="contact"
               method="post"
@@ -24,6 +28,7 @@
               data-netlify-honeypot="bot-field"
               enctype="application/x-www-form-urlencoded"
               @submit.prevent="handleFormSubmit"
+              v-show="success == false"
             >
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Name*</p>
@@ -70,10 +75,22 @@
               <button
                 type="submit"
                 class="px-8 py-2 bg-primary dark:bg-d-secondary text-white text-base rounded focus:outline-none"
+                :disabled="isloading == true"
               >
-                Send Message
+                {{ isloading == true ? 'Please wait' : 'Send Message' }}
               </button>
             </form>
+            </transition>
+            <transition
+              name="fadeform"
+            >
+              <div class="flex items-center h-full" v-show="success == true">
+                <div class="text-center md:text-left">
+                  <h1 class="text-4xl md:text-5xl text-white mb-5">Thank you for your message!</h1>
+                  <p class="text-xl md:text-2xl text-white">I’ll try to respond as soon as I can.</p>
+                </div>
+              </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -136,7 +153,9 @@ export default {
         email: '',
         subject: '',
         message: ''
-     }
+     },
+      success : false,
+      isloading : false
     }
   },
   methods: {
@@ -151,6 +170,8 @@ export default {
         },
 
     handleFormSubmit(e) {
+
+        this.isloading = true
         const axiosConfig = {
             header: { "Content-Type": "application/x-www-form-urlencoded" }
         };
@@ -163,9 +184,21 @@ export default {
             }),
             axiosConfig
         )
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
+        .then(data => {
+          console.log(data)
+          this.form.name = '';
+          this.form.email = '';
+          this.form.subject = '';
+          this.form.message = '';
+          this.success = true;
+        })
+        .catch(error => {
+          console.log(error)
+          this.success = false;
+        })
         .then(console.log('Success'))
+      
+        this.isloading = false
     }
   }
 }
