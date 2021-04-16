@@ -26,6 +26,7 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Name*</p>
                 <input
+                  v-model="form.name"
                   type="text"
                   name="name"
                   class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-12 bg-gray-100 rounded border-2 border-primary focus:outline-none"
@@ -35,6 +36,7 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Email*</p>
                 <input
+                  v-model="form.email"
                   type="email"
                   name="email"
                   class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-12 bg-gray-100 rounded border-2 border-primary focus:outline-none"
@@ -44,6 +46,7 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Subject*</p>
                 <input
+                  v-model="form.subject"
                   type="text"
                   name="subject"
                   class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-12 bg-gray-100 rounded border-2 border-primary focus:outline-none"
@@ -53,6 +56,7 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Message*</p>
                 <textarea
+                  v-model="form.message"
                   name="message"
                   id=""
                   cols="30"
@@ -121,26 +125,46 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  // data: function(){    
-  //   return {
-  //     form : {
-  //       name : '',
-  //       email: '',
-  //       subject: '',
-  //       message: ''
-  //    }
-  //   }
-  // },
-  // methods: {
-  //   processForm: function(){
-  //     fetch('/', {
-  //           method: 'POST',
-  //           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //           body: new URLSearchParams(new FormData(this.form)).toString()
-  //         }).then(() => console.log('Form successfully submitted')).catch((error) =>
-  //           alert(error))
-  //   }
-  // }
+  data: function(){    
+    return {
+      form : {
+        name : '',
+        email: '',
+        subject: '',
+        message: ''
+     }
+    }
+  },
+  methods: {
+    encode(data) {  
+            const formData = new FormData();
+            
+            for (const key of Object.keys(data)) {
+                formData.append(key, data[key]);
+            }
+            
+            return formData;
+        },
+
+    handleFormSubmit(e) {
+        const axiosConfig = {
+            header: { "Content-Type": "application/x-www-form-urlencoded" }
+        };
+
+        axios.post(
+            location.href, 
+            this.encode({
+                'form-name': e.target.getAttribute("name"),
+                ...this.form,
+            }),
+            axiosConfig
+        )
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
+        .then(console.log('Success'))
+    }
+  }
 }
 </script>
