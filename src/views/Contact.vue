@@ -3,15 +3,30 @@
     <div class="py-24">
       <h1
         class="text-2xl md:text-4xl text-center font-semibold font-open-sans text-primary dark:text-white"
-      >GET IN TOUCH NOW!</h1>
-      <div class="mx-auto pt-8 md:pt-16 px-8 md:px-2 w-full max-w-screen-lg font-open-sans">
+      >
+        GET IN TOUCH NOW!
+      </h1>
+      <div
+        class="mx-auto pt-8 md:pt-16 px-8 md:px-2 w-full max-w-screen-lg font-open-sans"
+      >
         <div class="flex flex-col md:flex-row justify-between md:space-x-12">
-          <img src="@/assets/svg/contact.svg" alt srcset class="mt-12 mx-auto w-5/6 md:w-1/2 h-1/2 mb-16 md:mb-0" />
+          <img
+            src="@/assets/svg/contact.svg"
+            alt
+            srcset
+            class="mt-12 mx-auto w-5/6 md:w-1/2 h-1/2 mb-16 md:mb-0"
+          />
           <div class="w-full md:w-1/2">
-            <form name="contact" method="POST" netlify="true">
-              <div class="mb-4">  
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              @submit.prevent="processForm"
+            >
+              <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Name*</p>
                 <input
+                  v-model="form.name"
                   type="text"
                   name="name"
                   class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-12 bg-gray-100 rounded border-2 border-primary focus:outline-none"
@@ -21,6 +36,7 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Email*</p>
                 <input
+                  v-model="form.email"
                   type="email"
                   name="email"
                   class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-12 bg-gray-100 rounded border-2 border-primary focus:outline-none"
@@ -30,6 +46,7 @@
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Subject*</p>
                 <input
+                  v-model="form.subject"
                   type="text"
                   name="subject"
                   class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-12 bg-gray-100 rounded border-2 border-primary focus:outline-none"
@@ -38,10 +55,22 @@
 
               <div class="mb-4">
                 <p for class="text-primary dark:text-white mb-2">Message*</p>
-                <textarea name="message" id="" cols="30" rows="30" class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-36 bg-gray-100 rounded border-2 border-primary focus:outline-none"></textarea>
+                <textarea
+                  v-model="form.message"
+                  name="message"
+                  id=""
+                  cols="30"
+                  rows="30"
+                  class="text-lg dark:bg-blue-100 px-4 py-1 w-full h-36 bg-gray-100 rounded border-2 border-primary focus:outline-none"
+                ></textarea>
               </div>
 
-              <button type="submit" class="px-8 py-2 bg-primary dark:bg-d-secondary text-white text-base rounded focus:outline-none">Send Message</button>
+              <button
+                type="submit"
+                class="px-8 py-2 bg-primary dark:bg-d-secondary text-white text-base rounded focus:outline-none"
+              >
+                Send Message
+              </button>
             </form>
           </div>
         </div>
@@ -49,8 +78,12 @@
     </div>
 
     <footer class="bg-primary dark:bg-d-footer">
-      <div class="mx-auto py-8 px-4 w-full flex flex-col md:flex-row justify-between">
-        <p class="text-white text-center mb-5 text-base md:text-sm md:mb-0 md:w-1/2">
+      <div
+        class="mx-auto py-8 px-4 w-full flex flex-col md:flex-row justify-between"
+      >
+        <p
+          class="text-white text-center mb-5 text-base md:text-sm md:mb-0 md:w-1/2"
+        >
           © Copyright 2021 Keigo Victor Fujita
           <span class="block md:inline"></span> All rights reserved.
         </p>
@@ -93,6 +126,25 @@
 
 <script>
 export default {
-  
+  data: function(){    
+    return {
+      form : {
+        name : '',
+        email: '',
+        subject: '',
+        message: ''
+     }
+    }
+  },
+  methods: {
+    processForm: function(){
+      fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(new FormData(this.form)).toString()
+          }).then(() => console.log('Form successfully submitted')).catch((error) =>
+            alert(error))
+    }
+  }
 }
 </script>
